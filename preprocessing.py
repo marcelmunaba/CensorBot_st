@@ -1,6 +1,7 @@
 import re
 import string
 import nltk
+nltk.download('punkt')
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
