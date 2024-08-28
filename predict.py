@@ -39,7 +39,7 @@ def censor_text(predict, text, vectorizer):
     else:
         return text
     
-if __name__ == "__main__":
+#if __name__ == "__main__":
     #print("Welcome to CensorBot :)")
     #while True:
     #    
