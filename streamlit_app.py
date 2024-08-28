@@ -3,7 +3,7 @@ import pandas as pd
 import predict as pred
 import nltk
 
-# Download necessary NLTK data
+# Download necessary NLTK data - important for preprocessing!
 nltk.download('punkt_tab')
 nltk.download('stopwords')
 nltk.download('wordnet')
@@ -17,8 +17,8 @@ def load_model_and_vectorizer():
 
 classifier, vectorizer, data = load_model_and_vectorizer()
 
-st.title("CensorBot")
-st.text("Welcome to CensorBot Demo!")
+st.title("CensorBot Demo")
+st.text("Welcome! In this demo, CensorBot will tell you if you are polite or not. Try typing what is on your mind down below :point_down:")
 
 # Initialize chat history
 if "messages" not in st.session_state:
@@ -31,7 +31,7 @@ for message in st.session_state.messages:
 
 # Insert a chat message container
 message = st.chat_message("assistant")
-message.write("Hello! What do you have in mind?")
+message.write("Hello! I'm CensorBot. What do you have in mind?")
 
 # React to user input
 if prompt := st.chat_input("What is up?"):
@@ -53,7 +53,7 @@ if prompt := st.chat_input("What is up?"):
     if predict == 1:
         response = "Hey that's a bit rude! Watch your language :angry:"
     else:
-        response = "I see. Thank you for being polite :)"
+        response = "I see. Thank you for being polite :smile:"
 
     # Display assistant response in chat message container
     with st.chat_message("assistant"):
