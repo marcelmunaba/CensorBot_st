@@ -1,6 +1,10 @@
 import streamlit as st
 import pandas as pd
 import predict as pred
+import nltk
+
+# Download necessary NLTK data
+nltk.download('punkt')
 
 # MODEL PREPARATION
 @st.cache_resource
