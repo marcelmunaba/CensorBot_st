@@ -6,6 +6,7 @@ import nltk
 # Download necessary NLTK data
 nltk.download('punkt_tab')
 nltk.download('stopwords')
+nltk.download('wordnet')
 
 # MODEL PREPARATION
 @st.cache_resource
