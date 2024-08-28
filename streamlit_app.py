@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import numpy as np
 
 #TODO: MIGRATE MINE FUNCTION DARI PREDICT.PY TO THIS FILE
 st.text("This is a test streamlit app")
