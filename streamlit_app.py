@@ -18,7 +18,8 @@ def load_model_and_vectorizer():
 classifier, vectorizer, data = load_model_and_vectorizer()
 
 st.title("CensorBot Demo")
-st.text("Welcome! In this demo, CensorBot will tell you if you are polite or not. Try typing what is on your mind down below :point_down:")
+st.text("Welcome! In this demo, CensorBot will tell you if you are polite or not.")
+st.text("Try typing what is on your mind down below :point_down:")
 
 # Initialize chat history
 if "messages" not in st.session_state:
