@@ -2,11 +2,7 @@ import pandas as pd
 from preprocessing import preprocess_text
 from model import train_model
 import numpy as np
-import joblib
-import re
 import csv
-import re
-import random
 
 def predict_curse(classifier, vectorizer, text, data):
     new_text = preprocess_text(text, data)
