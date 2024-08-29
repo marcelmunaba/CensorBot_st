@@ -8,6 +8,11 @@ nltk.download('punkt_tab')
 nltk.download('stopwords')
 nltk.download('wordnet')
 
+@st.cache_data
+def welcome():
+      with st.chat_message("assistant"):
+        st.markdown("Hi there, I'm CensorBot. What do you have in mind?")
+  
 # MODEL PREPARATION
 @st.cache_resource
 def load_model_and_vectorizer():
@@ -19,6 +24,7 @@ classifier, vectorizer, data = load_model_and_vectorizer()
 
 st.title("CensorBot Demo")
 st.html("<p>Welcome! In this demo, CensorBot will tell you if you are polite or not. Try typing what is on your mind down below 👇</p>")
+welcome()
 
 # Initialize chat history
 if "messages" not in st.session_state:
@@ -28,14 +34,11 @@ if "messages" not in st.session_state:
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
-
-# Insert a chat message container
-message = st.chat_message("assistant")
-message.write("Hello! I'm CensorBot. What do you have in mind?")
-
+    
 # React to user input
 if prompt := st.chat_input("What is up?"):
     # Display user message in chat message container
+    first_start = 0
     with st.chat_message("user"):
         st.markdown(prompt)
 
@@ -61,7 +64,7 @@ if prompt := st.chat_input("What is up?"):
     
     # Recurring message
     with st.chat_message("assistant"):
-        st.markdown("Hello! What do you have in mind?")
+        st.markdown("Hi there, I'm CensorBot. What do you have in mind?")
     
     # Add assistant response to chat history
     st.session_state.messages.append({"role": "assistant", "content": response})
