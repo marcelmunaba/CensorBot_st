@@ -4,6 +4,7 @@ from model import train_model
 import numpy as np
 import csv
 
+# Predict function after receiving input from the user
 def predict_curse(classifier, vectorizer, text, data):
     new_text = preprocess_text(text, data)
     #print("Preprocessed text: ", new_text) #debugging
@@ -11,6 +12,7 @@ def predict_curse(classifier, vectorizer, text, data):
     prediction = classifier.predict(new_text_transformed)
     return prediction, new_text
 
+# Used to update the csv - future implementation: update the database
 def append_to_csv(file_path, new_word, severity_rating):
     with open(file_path, 'a', newline='', encoding='utf-8') as csvfile:
         writer = csv.writer(csvfile)
@@ -18,6 +20,7 @@ def append_to_csv(file_path, new_word, severity_rating):
         severity_rating_rounded = round(severity_rating, 1)
         writer.writerow([new_word, severity_rating_rounded])  # Enclose both elements within a list or tuple
 
+# Returns the censored text written by the user based on the prediction
 def censor_text(predict, text, vectorizer):
     if predict == 1:
         original_text = text
@@ -34,7 +37,8 @@ def censor_text(predict, text, vectorizer):
         return original_text
     else:
         return text
-    
+
+# Deprecated Main function, moved to streamlit_app    
 #if __name__ == "__main__":
     #print("Welcome to CensorBot :)")
     #while True:

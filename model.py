@@ -20,9 +20,5 @@ def train_model(data):
     classifier = MultinomialNB()
     weighted_X = X.multiply([word_weights.get(word, 1.0) for word in vectorizer.get_feature_names_out()])
     classifier.fit(weighted_X, y_label)
-
-    #y_pred = classifier.predict(X)
-    #acc_score = accuracy_score(y_label, y_pred)
-    #print("Accuracy Score:", acc_score)
     
     return classifier, vectorizer

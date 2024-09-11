@@ -1,3 +1,4 @@
+import time
 import streamlit as st
 import pandas as pd
 import predict as pred
@@ -10,8 +11,9 @@ nltk.download('wordnet')
 
 @st.cache_data
 def welcome():
-      with st.chat_message("assistant"):
+    with st.chat_message("assistant"):
         st.markdown("Hi there, I'm CensorBot. What do you have in mind?")
+        st.toast(f'App version from 29.08.2024')
   
 # MODEL PREPARATION
 @st.cache_resource
