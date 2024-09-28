@@ -9,7 +9,7 @@ nltk.download('punkt_tab')
 nltk.download('stopwords')
 nltk.download('wordnet')
 
-@st.cache_data
+#@st.cache_data
 def welcome():
     with st.chat_message("assistant"):
         st.markdown("Hi there, I'm CensorBot. What do you have in mind?")
