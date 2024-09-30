@@ -13,7 +13,7 @@ nltk.download('wordnet')
 def welcome():
     with st.chat_message("assistant"):
         st.markdown("Hi there, I'm CensorBot. What do you have in mind?")
-        st.toast(f'App version from 29.08.2024')
+        # st.toast(f'App version from 29.08.2024') #disabled temporarily
   
 # MODEL PREPARATION
 @st.cache_resource
