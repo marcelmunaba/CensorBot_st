@@ -2,5 +2,6 @@ numpy
 pandas
 scikit-learn
 nltk
-streamlit
+streamlit==1.40.2
+altair==5.4.1
 wordninja
